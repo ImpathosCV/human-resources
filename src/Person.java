@@ -45,7 +45,7 @@ public class Person {
     // To-string Method
     @Override
     public String toString() {
-        return name + ", " + height + ", " + weight;
+        return name + "\t" + height + "\t" + weight;
     }
 
     // Equals method
@@ -61,7 +61,7 @@ public class Person {
 
         Person p = (Person) obj;
 
-        return name.equals(p.name)
+        return Objects.equals(name, p.name)
                 && height == p.height
                 && weight == p.weight;
     }
