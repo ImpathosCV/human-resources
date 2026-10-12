@@ -45,7 +45,7 @@ public class Person {
     // To-string Method
     @Override
     public String toString() {
-        return name + "\t" + height + "\t" + weight;
+        return name + "\t" + height + "\t\t\t" + weight; // extra tabs to match headers
     }
 
     // Equals method
