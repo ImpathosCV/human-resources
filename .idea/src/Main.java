@@ -7,18 +7,23 @@ answer the following questions:
 
 Q1: Car and Engine are related
 by which, Inheritance or Composition?
+A1: Composition
 
 Q2: Color and Red are related
 by which, Inheritance or Composition?
+A2: Inheritance
 
 Q3: Shirt and Clothing are related
 by which, Inheritance or Composition?
+A3: Inheritance
 
 Q4: Furniture and Desk are related
 by which, Inheritance or Composition?
+A4: Inheritence
 
 Q5: CellPhone and Battery are related
 by which, Inheritance or Composition?
+A5: Composition
 
 */
 import java.io.File;
