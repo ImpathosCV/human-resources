@@ -26,9 +26,12 @@ by which, Inheritance or Composition?
 A5: Composition
 
 */
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Main
@@ -38,21 +41,61 @@ public class Main
 
         System.out.println();
 
+        // Create PersonSet
+        PersonSet people = new PersonSet();
+
+        // Create Test Person
+        String name = "Shyguy";
+        double height = 100d; // cm
+        double weight = 25d; // kg
+
+        Person shyguy = new Person(name, height, weight);
+
+        shyguy.setHeight(99.9d);
+
+        people.add(shyguy);
+
+        // Read file
+        Path path = Paths.get(args[0]);
+        Scanner fileReader = null;
+
+        // Initialize scanner and check for invalid path
+        try {
+            fileReader = new Scanner(path);
+        } catch (IOException e) {
+            System.out.println("IO Error: "+e.getMessage());
+            System.exit(1);
+        }
+
+        // Instantiate Variables
+        String headers = fileReader.nextLine(); // get past headers
+        name = "";
+        height=0d;
+        weight=0d;
+
+        // Create People for each user
+        try {
+            while(fileReader.hasNextLine()) {
+                name = fileReader.next();
+                height = fileReader.nextInt();
+                weight = fileReader.nextInt();
+
+                Person person = new Person(name, height, weight);
+                people.add(person);
+            }
+        } catch (java.util.InputMismatchException e) {
+            e.printStackTrace();
+            System.out.println("\n"+e+"\n");
+        }
+
+        fileReader.close();
+
+        System.out.println(headers);
+        System.out.println(people.toString());
+
+
 		/*
-		// Don't overcomplicate the data
-		// reading. After skipping the
-		// first row, you can use the
-		// following to read a row of
-		// character info, assuming your
-		// Scanner is named "fileReader"
-		String name = fileReader.next();
-		double height = fileReader.nextDouble();
-		double weight = fileReader.nextDouble();
-		*/
-
-
-
-		/*try
+		try
 		{
 			FileWriter fileWriterOrder = new FileWriter("outputfile.txt");
 			fileWriterOrder.write("testing");
