@@ -65,4 +65,10 @@ public class Person {
                 && height == p.height
                 && weight == p.weight;
     }
+
+    // Hash Code method
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, height, weight);
+    }
 }
