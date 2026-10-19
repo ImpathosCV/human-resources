@@ -63,7 +63,7 @@ public class Main
         }
 
         // Instantiate Variables
-        String headers = fileReader.nextLine(); // get past headers
+        fileReader.nextLine(); // get past headers
 
         // Create People for each user
         try {
@@ -87,28 +87,24 @@ public class Main
         fileReader.close();
 
         System.out.println("***********Ordered Results***********");
-        System.out.println(headers);
         System.out.println(orderedPeople.toString());
 
         System.out.println(); // separator line
 
         System.out.println("***********Imperial Results***********");
-        System.out.println(headers.replace("cm", "in").replace("kg", "lbs"));
         System.out.println(imperialPeople.toString());
 
-
-		/*
+        // write to output files
 		try
 		{
-			FileWriter fileWriterOrder = new FileWriter("outputfile.txt");
-			fileWriterOrder.write("testing");
-			fileWriterOrder.close();
+            FileWriter orderedOutputFile = new FileWriter("hr_ordered_set_output.txt");
+            FileWriter imperialOutputFile = new FileWriter("hr_imperial_set_output.txt");
 		}
 		catch(IOException e)
 		{
 			e.printStackTrace();
 			System.out.println(e);
 			System.exit(1);
-		}*/
+		}
     }
 }

@@ -26,6 +26,20 @@ public class PersonImperialSet extends PersonSet {
     }
 
     public static double toPounds(double kilograms) {
-        return kilograms * 2.205; // converts cm to in
+        return kilograms * 2.205; // converts kg to lbs
+    }
+
+    // toString method
+    @Override
+    public String toString() {
+        String returnString = headerString.replace("cm", "in").replace("kg", "lbs");
+        for (Person p : people) {
+            returnString += String.format("%s\t%.2f\t\t%.2f\n",
+                    p.getName(),
+                    p.getHeight(),
+                    p.getWeight());
+        }
+
+        return returnString;
     }
 }

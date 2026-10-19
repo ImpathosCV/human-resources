@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class PersonSet implements PersonList {
     protected ArrayList<Person> people;
+    String headerString = "Name\tHeight (cm)\tWeight (kg)\n";
 
     // Create a new array list of people
     public PersonSet() {
@@ -46,8 +47,7 @@ public class PersonSet implements PersonList {
     // toString method
     @Override
     public String toString() {
-        String returnString = "";
-
+        String returnString = headerString;
         for (Person p : people) {
             returnString += p.toString() + "\n";
         }
