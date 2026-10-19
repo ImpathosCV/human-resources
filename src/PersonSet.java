@@ -16,6 +16,13 @@ public class PersonSet implements PersonList {
 
     // add person to array list
     public void add(Person person) {
+        // Don't need to check contains if there are no values
+        if (people.isEmpty()) {
+            people.add(person);
+            return;
+        }
+
+        // Filter out duplicates
         if (people.contains(person)) {
             return;
         }

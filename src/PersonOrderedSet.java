@@ -10,19 +10,7 @@ public class PersonOrderedSet extends PersonSet {
 
     @Override
     public void add(Person person) {
-        // Already sorted with the only 1 person
-        if (people.isEmpty()) {
-            people.add(person);
-            return;
-        }
-
-        // Check for duplicates before continuing
-        if (people.contains(person)) {
-            return;
-        }
-
-        // Add the person then sort using insertion sort
-        people.add(person);
+        super.add(person); // add the person like normal, then sort
 
         int addedIndex = people.size() - 1; // subtract 1 because count starts at 1, not 0
         Person addedPerson = people.get(addedIndex);
