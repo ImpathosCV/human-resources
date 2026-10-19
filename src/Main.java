@@ -86,12 +86,10 @@ public class Main
 
         fileReader.close();
 
-        System.out.println("***********Ordered Results***********");
         System.out.println(orderedPeople.toString());
 
         System.out.println(); // separator line
 
-        System.out.println("***********Imperial Results***********");
         System.out.println(imperialPeople.toString());
 
         // write to output files
@@ -99,6 +97,15 @@ public class Main
 		{
             FileWriter orderedOutputFile = new FileWriter("hr_ordered_set_output.txt");
             FileWriter imperialOutputFile = new FileWriter("hr_imperial_set_output.txt");
+
+            String orderedOutput = orderedPeople.toString();
+            String imperialOutput = imperialPeople.toString();
+
+            orderedOutputFile.write(orderedOutput);
+            imperialOutputFile.write(imperialOutput);
+
+            orderedOutputFile.close();
+            imperialOutputFile.close();
 		}
 		catch(IOException e)
 		{
