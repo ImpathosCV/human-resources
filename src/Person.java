@@ -45,7 +45,7 @@ public class Person {
     // To-string Method
     @Override
     public String toString() {
-        return name + "\t" + height + "\t\t\t" + weight; // extra tabs to match headers
+        return String.format("%s\t%.0f\t\t\t%.0f", name, height, weight); // extra tabs to match headers
     }
 
     // Equals method
