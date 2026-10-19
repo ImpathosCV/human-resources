@@ -42,7 +42,8 @@ public class Main
         System.out.println();
 
         // Create PersonSet
-        PersonSet people = new PersonOrderedSet();
+        PersonOrderedSet orderedPeople = new PersonOrderedSet();
+        PersonImperialSet imperialPeople = new PersonImperialSet();
 
         // Read file
         Scanner fileReader = null;
@@ -72,7 +73,8 @@ public class Main
                 double weight = fileReader.nextInt();
 
                 Person person = new Person(name, height, weight);
-                people.add(person);
+                orderedPeople.add(person);
+                imperialPeople.add(person);
             }
         } catch (java.util.InputMismatchException e) {
             e.printStackTrace();
@@ -81,8 +83,15 @@ public class Main
 
         fileReader.close();
 
+        System.out.println("***********Ordered Results***********");
         System.out.println(headers);
-        System.out.println(people.toString());
+        System.out.println(orderedPeople.toString());
+
+        System.out.println(); // separator line
+
+//        System.out.println("***********Imperial Results***********");
+//        System.out.println(headers.replace("cm", "in").replace("kg", "lbs"));
+//        System.out.println(imperialPeople.toString());
 
 
 		/*
