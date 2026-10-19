@@ -6,7 +6,7 @@ PersonSet will also have a toString method that will print every Set item
 
 import java.util.ArrayList;
 
-public class PersonSet {
+public class PersonSet implements PersonList {
     protected ArrayList<Person> people;
 
     // Create a new array list of people
