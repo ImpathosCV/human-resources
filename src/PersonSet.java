@@ -48,8 +48,8 @@ public class PersonSet implements PersonList {
     @Override
     public String toString() {
         String returnString = headerString;
-        for (Person p : people) {
-            returnString += p.toString() + "\n";
+        for (Person person : people) {
+            returnString += person.toString() + "\n";
         }
 
         return returnString;
