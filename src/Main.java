@@ -42,18 +42,18 @@ public class Main
         System.out.println();
 
         // Create PersonSet
-        PersonSet people = new PersonSet();
+        PersonSet people = new PersonOrderedSet();
 
-        // Create Test Person
-        String name = "Shyguy";
-        double height = 100d; // cm
-        double weight = 25d; // kg
-
-        Person shyguy = new Person(name, height, weight);
-
-        shyguy.setHeight(99.9d);
-
-        people.add(shyguy);
+//        // Create Test Person
+//        String name = "Shyguy";
+//        double height = 100d; // cm
+//        double weight = 25d; // kg
+//
+//        Person shyguy = new Person(name, height, weight);
+//
+//        shyguy.setHeight(99.9d);
+//
+//        people.add(shyguy);
 
         // Read file
         Scanner fileReader = null;
@@ -74,9 +74,9 @@ public class Main
 
         // Instantiate Variables
         String headers = fileReader.nextLine(); // get past headers
-        name = "";
-        height=0d;
-        weight=0d;
+        String name = "";
+        double height = 0d;
+        double weight = 0d;
 
         // Create People for each user
         try {
