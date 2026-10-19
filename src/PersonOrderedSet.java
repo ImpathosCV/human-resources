@@ -41,4 +41,15 @@ public class PersonOrderedSet extends PersonSet {
         people.set(pointer + 1, addedPerson);
 
     }
+
+    @Override
+    public String toString() {
+        String returnString = "***********Ordered Results***********\n";
+        returnString += headerString;
+        for (Person person : people) {
+            returnString += person.toString() + "\n";
+        }
+
+        return returnString;
+    }
 }
