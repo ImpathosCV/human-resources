@@ -4,6 +4,8 @@ PersonImperialSet will extend a PersonSet
 PersonImperialSet will also have individual convert methods for both height and weight
  */
 
+import java.text.DecimalFormat;
+
 public class PersonImperialSet extends PersonSet {
 
     @Override
@@ -26,18 +28,23 @@ public class PersonImperialSet extends PersonSet {
     }
 
     public static double toPounds(double kilograms) {
-        return kilograms * 2.205; // converts kg to lbs
+        return kilograms * 2.20462; // converts kg to lbs
     }
 
     // toString method
     @Override
     public String toString() {
-        String returnString = headerString.replace("cm", "in").replace("kg", "lbs");
-        for (Person p : people) {
-            returnString += String.format("%s\t%.2f\t\t%.2f\n",
-                    p.getName(),
-                    p.getHeight(),
-                    p.getWeight());
+        String returnString = "***********Imperial Results***********\n";
+        returnString += headerString.replace("cm", "in").replace("kg", "lbs");
+
+        // using decimal format for optional decimals (no trailing zeros)
+        DecimalFormat df = new DecimalFormat("0.##");
+
+        for (Person person : people) {
+            returnString += String.format("%s\t%s\t\t%s\n",
+                    person.getName(),
+                    df.format(person.getHeight()),
+                    df.format(person.getWeight()));
         }
 
         return returnString;
