@@ -4,8 +4,6 @@ PersonOrderedSet will extend a PersonSet
 PersonOrderedSet will also have a sort method that uses insertion sort
  */
 
-import java.util.ArrayList;
-
 public class PersonOrderedSet extends PersonSet {
 
     @Override
