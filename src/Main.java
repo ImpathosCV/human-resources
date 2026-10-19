@@ -56,8 +56,13 @@ public class Main
         people.add(shyguy);
 
         // Read file
-        Path path = Paths.get(args[0]);
         Scanner fileReader = null;
+        Path path = null;
+        try {
+            path = Paths.get(args[0]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Please provide a file!");
+        }
 
         // Initialize scanner and check for invalid path
         try {
