@@ -72,9 +72,12 @@ public class Main
                 double height = fileReader.nextInt();
                 double weight = fileReader.nextInt();
 
-                Person person = new Person(name, height, weight);
-                orderedPeople.add(person);
-                imperialPeople.add(person);
+                // create two person objects to prevent issues with changing values in both lists
+                Person orderedPerson = new Person(name, height, weight);
+                Person imperialPerson = new Person(name, height, weight);
+
+                orderedPeople.add(orderedPerson);
+                imperialPeople.add(imperialPerson);
             }
         } catch (java.util.InputMismatchException e) {
             e.printStackTrace();
@@ -89,9 +92,9 @@ public class Main
 
         System.out.println(); // separator line
 
-//        System.out.println("***********Imperial Results***********");
-//        System.out.println(headers.replace("cm", "in").replace("kg", "lbs"));
-//        System.out.println(imperialPeople.toString());
+        System.out.println("***********Imperial Results***********");
+        System.out.println(headers.replace("cm", "in").replace("kg", "lbs"));
+        System.out.println(imperialPeople.toString());
 
 
 		/*
